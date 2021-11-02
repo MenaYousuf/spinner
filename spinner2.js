@@ -1,22 +1,21 @@
 
    
-let frameDelay = 200;
-const animFrames = ['|', '/', '-', '\\'];
-const timeout = frameDelay * animFrames.length;
+let delayCycle = 200;
+const rotations = ['|', '/', '-', '\\',];
+const timeout = delayCycle * rotations.length;
 
-const animLoopID = setInterval(() => {
-  for (let i = 0; i < animFrames.length; i++) {
+const pauses = setInterval(() => {
+  for (let i = 0; i < rotations.length; i++) {
     setTimeout(() => {
-      process.stdout.write(`\r ${animFrames[i]}   `);
-    }, frameDelay * i);
+      process.stdout.write(`\r ${rotations[i]}   `);
+    }, delayCycle * i);
   }
 }, timeout);
 
 setTimeout(() => {
-  clearInterval(animLoopID);
-  process.stdout.write('\n');
-}, 4000);
-
+  // clearInterval(pauses);
+  process.stdout.write();
+}, 2000);
 
 // setTimeout(() => {
 //   process.stdout.write('\r/   ');
